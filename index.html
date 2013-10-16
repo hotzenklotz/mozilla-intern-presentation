@@ -1,0 +1,314 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Summer Intern 2013</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen.css">
+	<base target="_blank">
+	<style>.slide:before {
+		/*background: url(pictures/tab.png) no-repeat;*/
+		position: absolute;
+		top: 5px;
+		right: -15px;
+		width: 120px;
+		height: 35px;
+		content: "mozilla";
+		font-family: "Open Sans";
+		font-weight: bold;
+		color: #4D4E53;
+	}
+	.slide.shout:before {visibility: hidden;}
+	.slide.full:before {visibility: hidden;}
+	.slide.cover:before {visibility: hidden;}
+	.no-margin p{margin: 0px 0px;}
+	.center p{text-align: center;}
+
+	</style>
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Beauty and the Beast: The FirefoxOS Gallery App</h1>
+	</header>
+	<section class="slide cover" id="Cover"><div>
+		<h2>Beauty and the Beast</h2>
+		<h2>The Firefox OS Gallery App</h2>
+		<p>by <a href="http://tomherold.net">Tom Herold</a></p>
+		<img src="pictures/firefox-os_logo.jpg" alt="" width="100%">
+
+		<style>
+			#Cover h2 {
+				margin:30px 0 0;
+				color:#000;
+				text-align:center;
+				font-size:70px;
+				}
+			#Cover p {
+				margin:10px 0 0;
+				text-align:center;
+				color:#FFF;
+				font-style:italic;
+				font-size:20px;
+				}
+				#Cover p a {
+					color:#FFF;
+					}
+		</style>
+	</div></section>
+
+	<section class="slide no-margin"><div>
+	<style type="text/css">#mitchell-quote li{text-indent: -1em}</style>
+		<figure>
+			<blockquote>
+				<p>
+			<!-- 	global community with a shared community. build the internet the world needs
+				Increasingly, I think of Mozilla as champions of a web where people do more, know more and do better. -->
+				We make our values and principles real with four great pillars of activities. [...] and our real success comes when these activities all function well together.
+				<ol id="mitchell-quote">
+					<li>We <b>build</b> products, </li>
+					<li>We <b>empower</b> communities,</li>
+					<li>We <b>teach</b> and learn and</li>
+					<li>We <b>shape</b> enviroments.
+				</ol>
+			</blockquote>
+			<figcaption style="margin-top: 10px;">Mitchell Baker</figcaption>
+		</figure>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Firefox OS</h2>
+		<ul>
+			<li>aka Boot2Gecko</li>
+			<li>Bringing the open web to the mobile market</li>
+			<li>Built on HTML, CSS and JavaScript</li>
+			<li>Targeted for emerging markets</li>
+			<li><a href="https://github.com/mozilla-b2g/">Open Source</a></li>
+		</ul>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Firefox OS</h2>
+		<p><img src="pictures/world-map.png" width="100%"></p>
+	</div></section>
+
+	<section class="slide" id="arch"><div>
+		<style>
+			#arch p {
+				text-align: center;
+				margin: 0px 0px;
+			}
+			#arch #first {transform: translate(0px,280px);}
+			#arch #last {transform: translate(0px,-280px);}
+		</style>
+
+		<h2>Firefox OS Architecture</h2>
+		<p><img height="130px" src="pictures/gonk.png" id="first"></p>
+		<p class="next"><img height="130px" src="pictures/b2g.png"></p>
+		<p class="next"><img height="130px" src="pictures/gaia.png" id="last"></p>
+	</div></section>
+
+	<section class="slide no-margin"><div>
+		<h2>EXIF Image Orientation</h2>
+		<p><img width="270px" src="pictures/exif_example.jpg"></p>
+		<p class="next" style="position: absolute; top: 170px; right: 150px; transform:rotate(90deg)"><img width="300px" src="pictures/exif_example.jpg"></p>
+		<p class="note">Source: <a href="https://github.com/recurser/exif-orientation-examples">https://github.com/recurser/exif-orientation-examples</a></p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Working with EXIF</h2>
+		<ul>
+			<li>Exchangeable image file format</li>
+			<li><a href="http://www.cipa.jp/english/hyoujunka/kikaku/pdf/DC-008-2010_E.pdf">JEITA &amp; CIPA Standard 2.3</a></li>
+			<li>Binary Format</li>
+			<li>In JPEG, WAV, TIFF headers</li>
+			<li>Various metadata</li>
+		</ul>
+	</div></section>
+
+	<section class="slide no-margin center"><div>
+		<h2>Working with EXIF continued</h2>
+		<p><img src="pictures/exif-diagram.jpg" width="350px"></p>
+		<p class="note">Source: EXIF Specification 4.5.4 Basic Structure of JPEG Compressed Data</a></p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Working with Binary</h2>
+		<ul>
+			<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays">Typed Arrays</a> &amp; <a href="https://developer.mozilla.org/en-US/docs/Web/API/DataView?redirectlocale=en-US&redirectslug=Web%2FJavaScript%2FTyped_arrays%2FDataView">DataView</a></li>
+			<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Blob">Blobs</a></li>
+			<pre>
+			<code>var dv = new DataView(buffer);</code>
+			<code>var vector_length = dv.getUint8(0);</code>
+			<code>var width = dv.getUint16(1); // 0+uint8 = 1 bytes offset</code>
+			<code>var height = dv.getUint32(3); // 0+uint8+uint32 = 3 bytes offset</code>
+			</pre>
+		</ul>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>EXIF Codes</h2>
+		<table>
+		<tbody><tr>
+			<th scope="col">EXIF Code</th>
+			<th>Rotation</th>
+			<th>Mirroring (X-Axis)</th>
+		</tr>
+		<tr>
+			<th scope="row">1</th>
+			<td>0°</td>
+			<td>false</td>
+		</tr>
+			<tr>
+			<th scope="row">2</th>
+			<td>0°</td>
+			<td>true</td>
+		</tr>
+		</tr>
+			<tr>
+			<th scope="row">3</th>
+			<td>180°</td>
+			<td>false</td>
+		</tr>
+		</tr>
+			<tr>
+			<th scope="row">...</th>
+			<td>...</td>
+			<td>...</td>
+		</tr>
+		<tr>
+			<th scope="row">8</th>
+			<td>270°</td>
+			<td>false</td>
+		</tr>
+		</tbody></table>
+	</div></section>
+
+	<section class="slide no-margin"><div>
+		<p style="text-align: center;"><img src="pictures/exif-demo.gif"></p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Challenges</h2>
+		<ul>
+			<li>Awful documentation</li>
+			<li class="next">Parsing in JS in realtime on a phone</li>
+			<li class="next">Callback Hell</li>
+			<li class="next">Code Duplications</li>
+			<li class="next">CSS "image-orientation: from-image"</li>
+		</ul>
+	</div></section>
+
+	<section class="slide center no-margin"><div>
+		<h2>Biggest Challenge...myself</h2>
+		<p><img src="pictures/exif-meme.jpg" width="290px"></p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Marionette JS Tests</h2>
+		<ul class="next">
+			<li>UI testing framework</li>
+			<li>Used for integration tests</li>
+			<li>Content and Chrome tests possible</li>
+		</ul><ul class="next">
+			<li>Client-Server Communication</li>
+			<li>Runs on NodeJS</li>
+			<li><a href="http://www.w3.org/TR/2013/WD-webdriver-20130117/">WebDriver</a></li>
+			<li><a href="https://github.com/mozilla-b2g/marionette-js-client">https://github.com/mozilla-b2g/marionette-js-client</a></li>
+		</ul>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>Demo</h2>
+		<p><h2>Demo</h2></p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Challenges</h2>
+		<ul>
+			<li>Saving all my cat pics</li>
+			<li class="next">Getting access to <a href="http://mxr.mozilla.org/mozilla-central/search?string=specialpowers&find=&findi=&filter=^[^\0]*%24&hitlimit=&tree=mozilla-central">Special Powers</a></li>
+		</ul>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Auto Color Correction</h2>
+		<ul>
+			<li>Fast algorithm</li>
+			<li>Low memory profile</li>
+			<li>Good visual results</li>
+		</ul>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>Demo</h2>
+		<p><h2><a href="http://hotzenklotz.github.io/color-balance">Demo</a></h2></p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>How does it work?</h2>
+		<p><img src="pictures/histogram.png" width="400px"></p>
+		<p class="next"><img src="pictures/histogram-indicators.png" width="290px" style="transform:translate(60px, -100px);"></p>
+		<p class="next"><img src="pictures/histogram-strechted.png" width="370px" style="transform:translate(400px, -435px)"></p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>What are others doing?</h2>
+			<figure>
+			<blockquote>
+				<p>The White Balance command automatically adjusts the colors of the active layer by <b>stretching</b> the Red, Green and Blue channels <b>separately</b>. To do this, it <b>discards</b> pixel colors at each end of the Red, Green and Blue histograms which are used by only <b>0.05%</b> of the pixels in the image and stretches the remaining range as much as possible.</p>
+			</blockquote>
+			<figcaption><a href="http://docs.gimp.org/en/gimp-layer-white-balance.html">Gimp Manual: White Balance</a></figcaption>
+		</figure>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<p><h2><a href="http://hotzenklotz.github.io/color-balance/images/gimp/gimp.html">Pics or didn't happen!</a></h2></p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Challenges</h2>
+		<ul>Optimization
+			<li>WebGL</li>
+			<li class="next">Web Workers</li>
+			<li class="next">Use preview images for calculations</li>
+		</ul>
+	</div></section>
+
+	<section class="slide no-margin center"><div>
+		<p><img src="pictures/correction-demo.gif" width="250px"></p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Thank you</h2>
+		<ul>
+			<li>Mozilla</li>
+			<li>Media Team
+				<ul>
+					<li>David Flanagan</li>
+					<li>Hema Koka</li>
+					<li>Diego Marcos</li>
+				</ul>
+			</li>
+			<li>Gaia Peers
+				<ul>
+					<li>Kevin Grandon</li>
+					<li>James Lal	</li>
+				</ul>
+			</li>
+	</div></section>
+
+	<section class="slide" ><div>
+		<h2>Let's keep in Touch</h2>
+		<p>email: heroldtom@gmail.com</p>
+		<p>irc: therold in #ffos_media, #gaia</p>
+		<p>demo: <a href="http://hotzenklotz.github.io/color-balance/">http://hotzenklotz.github.io/color-balance/</a>
+	</div></section>
+
+	<p class="badge"><a href="https://github.com/hotzenklotz/mozilla-intern-presentation">Fork me on Github</a></p>
+
+	<div class="progress"><div></div></div>
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2013 Tom Herold -->
+</body>
+</html>
