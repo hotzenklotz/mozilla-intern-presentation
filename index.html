@@ -57,13 +57,22 @@
 		</style>
 	</div></section>
 
-	<section class="slide"><div>
-		<h2></h2>
+	<section class="slide no-margin"><div>
+	<style type="text/css">#mitchell-quote li{text-indent: -1em}</style>
 		<figure>
 			<blockquote>
-				<p>Learn, build, teach... need to watch keynote again</p>
+				<p>
+			<!-- 	global community with a shared community. build the internet the world needs
+				Increasingly, I think of Mozilla as champions of a web where people do more, know more and do better. -->
+				We make our values and principles real with four great pillars of activities. [...] and our real success comes when these activities all function well together.
+				<ol id="mitchell-quote">
+					<li>We <b>build</b> products, </li>
+					<li>We <b>empower</b> communities,</li>
+					<li>We <b>teach</b> and learn and</li>
+					<li>We <b>shape</b> enviroments.
+				</ol>
 			</blockquote>
-			<figcaption>Mitchell Baker</figcaption>
+			<figcaption style="margin-top: 10px;">Mitchell Baker</figcaption>
 		</figure>
 	</div></section>
 
@@ -182,10 +191,11 @@
 	<section class="slide"><div>
 		<h2>Challenges</h2>
 		<ul>
-			<li>Aweful documentation</li>
-			<li>Parsing in JS in realtime/async on a phone</li>
-			<li>Code Duplications</li>
-			<li>...</li>
+			<li>Awful documentation</li>
+			<li class="next">Parsing in JS in realtime on a phone</li>
+			<li class="next">Callback Hell</li>
+			<li class="next">Code Duplications</li>
+			<li class="next">CSS "image-orientation: from-image"</li>
 		</ul>
 	</div></section>
 
@@ -196,13 +206,14 @@
 
 	<section class="slide"><div>
 		<h2>Marionette JS Tests</h2>
-		<ul>
+		<ul class="next">
 			<li>UI testing framework</li>
 			<li>Used for integration tests</li>
-			<li>Runs on NodeJS</li>
+			<li>Content and Chrome tests possible</li>
+		</ul><ul class="next">
 			<li>Client-Server Communication</li>
+			<li>Runs on NodeJS</li>
 			<li><a href="http://www.w3.org/TR/2013/WD-webdriver-20130117/">WebDriver</a></li>
-			<li>Content and Chrome test possible</li>
 			<li><a href="https://github.com/mozilla-b2g/marionette-js-client">https://github.com/mozilla-b2g/marionette-js-client</a></li>
 		</ul>
 	</div></section>
